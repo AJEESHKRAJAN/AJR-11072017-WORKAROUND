@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AOne_Sample</string>
+    <string name="action_settings">Settings</string>
+    <string name="actionOther">Other</string>
+    <string name="actionExit">Exit</string>
+    <string name="activity2Text">This is Activity 2</string>
+    <string name="activity3Text">Well !!! this is activity three</string>
+    <string name="click_on_activity_2">Click on Activity 2</string>
+    <string name="click_on_activity_3">Click on Activity 3</string>
+    <string name="toast_activity_2">See Toast</string>
+    <string name="close">Close</string>
+    <string name="LargeText">Bottom section text view</string>
+    <string name="Bottom_Text">This is the bottom text</string>
+    <string name="buttonClick">Click on this button</string>
+    <string name="TextOnClick_FirstTop">Clicked 1 !!!</string>
+    <string name="button2Text">Click on button 2 !!!</string>
+    <string name="button2ShowText">Clicked on second button !!!!</string>
+</resources>

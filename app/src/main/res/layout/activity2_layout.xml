@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_height="0px"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        tools:ignore="UselessLeaf"
+        tools:layout_height="0dp">
+
+        <EditText
+            android:id="@+id/firstTopText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:text="This is first top text " />
+
+        <EditText
+            android:id="@+id/SecondTopText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/firstTopText"
+            android:layout_toRightOf="@+id/firstTopText"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:text="This is a second top text " />
+
+        <Button
+            android:id="@+id/activity2Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SecondTopText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:text="@string/buttonClick" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity2Button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:text="@string/button2Text" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_height="0px"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        tools:layout_height="0dp">
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_height="wrap_content"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            tools:layout_width="0dp" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_height="wrap_content"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="right"
+            android:inputType="textMultiLine"
+            tools:layout_width="0dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/bottomTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:text="@string/Bottom_Text" />
+    </LinearLayout>
+
+</LinearLayout>
