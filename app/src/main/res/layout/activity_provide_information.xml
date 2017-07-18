@@ -7,18 +7,9 @@
     tools:context="com.example.a454203.aone_sample.ProvideInformationActivity">
 
     <RelativeLayout
+        android:id="@+id/rlProvideInfo"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/txtSelectCourse"
-            style="@android:style/Widget.DeviceDefault.TextView"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:text="Select Course"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
 
         <RadioGroup
             android:id="@+id/rdoGroup"
@@ -55,6 +46,16 @@
                 android:text="Radio Button option 4 clicked" />
         </RadioGroup>
 
+        <TextView
+            android:id="@+id/txtSelectCourse"
+            style="@android:style/Widget.DeviceDefault.TextView"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Select Course"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/btnDone"
             android:layout_width="match_parent"
@@ -65,7 +66,7 @@
             android:text="Done"
             android:textSize="24sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/txtWrtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,7 +80,7 @@
             android:textAlignment="inherit"
             android:textSize="24sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/txtWrtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

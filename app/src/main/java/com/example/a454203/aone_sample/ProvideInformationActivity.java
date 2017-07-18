@@ -4,12 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class ProvideInformationActivity extends AppCompatActivity {
+public class ProvideInformationActivity extends AppCompatActivity implements View.OnClickListener{
 
     public static final String CLASS_NAME_EXTRA = "classNameExtra";
     public static final String PERSON_NAME_EXTRA = "personNameExtra";
@@ -19,14 +20,15 @@ public class ProvideInformationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_provide_information);
+        setUpViews();
     }
 
-    private void setUpViews() {
+    void setUpViews() {
         Button doneButton = (Button) findViewById(R.id.btnDone);
-        doneButton.setOnClickListener(s -> handleDoneButton((Button) s));
+        doneButton.setOnClickListener(this);
     }
 
-    private void handleDoneButton(Button s) {
+    void handleDoneButton(Button s) {
         String className = getSelectedRadioGroupValue(R.id.rdoGroup);
         String personName = getEditTextValue(R.id.txtWrtName);
         String personEmail = getEditTextValue(R.id.txtWrtEmail);
@@ -57,5 +59,20 @@ public class ProvideInformationActivity extends AppCompatActivity {
         selectedText = String.valueOf(radioButton.getText());
 
         return selectedText;
+    }
+
+    @Override
+    public void onClick(View v) {
+        Button button  = (Button) v;
+
+        int id = button.getId();
+
+        switch (id) {
+            case R.id.btnDone:
+                handleDoneButton(button);
+                break;
+            default:
+                break;
+        }
     }
 }
