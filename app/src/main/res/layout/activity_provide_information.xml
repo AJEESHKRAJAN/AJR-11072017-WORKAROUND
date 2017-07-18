@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a454203.aone_sample.ProvideInformationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtSelectCourse"
+            style="@android:style/Widget.DeviceDefault.TextView"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Select Course"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rdoGroup"
+            android:layout_width="match_parent"
+            android:layout_height="191dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtSelectCourse"
+            android:clipChildren="false">
+
+            <RadioButton
+                android:id="@+id/rdnOpt1"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:checked="true"
+                android:text="Radio Button option one clicked" />
+
+            <RadioButton
+                android:id="@+id/rdnOpt2"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:text="Radio Button option 2 clicked" />
+
+            <RadioButton
+                android:id="@+id/rdnOpt3"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:text="Radio Button option 3 clicked" />
+
+            <RadioButton
+                android:id="@+id/rdnOpt4"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:text="Radio Button option 4 clicked" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Done"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtWrtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/rdoGroup"
+            android:layout_marginTop="10dp"
+            android:hint="Your Name"
+            android:inputType="textPersonName"
+            android:paddingBottom="30dp"
+            android:textAlignment="inherit"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtWrtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/rdoGroup"
+            android:layout_marginTop="60dp"
+            android:hint="Your Email"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="30dp"
+            android:textAlignment="inherit"
+            android:textSize="24sp" />
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
