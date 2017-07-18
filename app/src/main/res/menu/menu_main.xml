@@ -16,6 +16,9 @@
         android:id="@+id/action_activity3"
         android:title="@string/click_on_activity_3" />
     <item
+        android:id="@+id/action_activity4"
+        android:title="@string/click_on_activity_4" />
+    <item
         android:id="@+id/actionExit"
         android:title="@string/actionExit" />
 </menu>

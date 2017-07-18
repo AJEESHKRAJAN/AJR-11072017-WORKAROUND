@@ -21,13 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
     }
 
     @Override
@@ -66,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
                 onClickActivity3(item);
                 handled = true;
                 break;
+            case R.id.action_activity4:
+                onClickActivity4(item);
+                handled = true;
+                break;
 
             default:
                 handled = super.onOptionsItemSelected(item);
@@ -74,14 +73,12 @@ public class MainActivity extends AppCompatActivity {
         return handled;
     }
 
+
     public void onClickMenuOther(MenuItem item) {
 
         Toast.makeText(this, "Clicked on Other", Toast.LENGTH_LONG).show();
     }
 
-    public void onClickMenuExit(MenuItem item) {
-        finish();
-    }
 
     public void onClickActivity2(MenuItem item) {
         Intent intent = new Intent(this, Main2Activity.class);
@@ -93,5 +90,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onClickActivity4(MenuItem item) {
+        Intent intent = new Intent(this, Main4Activity.class);
+        startActivity(intent);
+    }
 
+    public void onClickMenuExit(MenuItem item) {
+        finish();
+    }
 }
