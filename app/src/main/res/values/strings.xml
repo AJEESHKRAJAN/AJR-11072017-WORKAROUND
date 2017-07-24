@@ -18,4 +18,6 @@
     <string name="title_activity_main4">Main4Activity</string>
     <string name="click_on_activity_4">Activity 4 - Render back post value</string>
     <string name="emptyString" />
+    <string name="courseDesc">This is the place where each individual  course\'s description will appear</string>
+    <string name="explore_fragments">Explore Fragments</string>
 </resources>

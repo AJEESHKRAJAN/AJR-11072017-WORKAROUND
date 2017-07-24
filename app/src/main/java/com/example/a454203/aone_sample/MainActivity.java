@@ -6,7 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -65,12 +64,21 @@ public class MainActivity extends AppCompatActivity {
                 onClickActivity4(item);
                 handled = true;
                 break;
+            case R.id.actionFragment:
+                onClickActivityFragment(item);
+                handled = true;
+                break;
 
             default:
                 handled = super.onOptionsItemSelected(item);
         }
 
         return handled;
+    }
+
+    public void onClickActivityFragment(MenuItem item) {
+        Intent intent = new Intent(this, FragmentActivity.class);
+        startActivity(intent);
     }
 
 

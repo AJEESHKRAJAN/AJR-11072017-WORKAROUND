@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arrFragmentCourseTitle">
+        <item>"Fragments Title"</item>
+        <item>"Intents Title"</item>
+        <item>"Action Bar Title"</item>
+        <item>"Photo and Video Title"</item>
+        <item>"Android 4 Feature Title"</item>
+        <item>"Location apps Title"</item>
+        <item>"Async services Title"</item>
+    </string-array>
+    <string-array name="arrFragmentCourseDesc">
+        <item>"Fragments Description"</item>
+        <item>"Intents Description"</item>
+        <item>"Action Bar Description"</item>
+        <item>"Photo and Video Description"</item>
+        <item>"Android 4 Feature Description"</item>
+        <item>"Location apps Description"</item>
+        <item>"Async services Description"</item>
+    </string-array>
+</resources>

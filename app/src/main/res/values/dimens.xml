@@ -1,4 +1,5 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="txtPadding">50px</dimen>
+    <dimen name="zeroHeight">0dp</dimen>
 </resources>
