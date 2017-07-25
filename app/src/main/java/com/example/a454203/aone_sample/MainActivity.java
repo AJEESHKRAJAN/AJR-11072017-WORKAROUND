@@ -76,12 +76,6 @@ public class MainActivity extends AppCompatActivity {
         return handled;
     }
 
-    public void onClickActivityFragment(MenuItem item) {
-        Intent intent = new Intent(this, FragmentActivity.class);
-        startActivity(intent);
-    }
-
-
     public void onClickMenuOther(MenuItem item) {
 
         Toast.makeText(this, "Clicked on Other", Toast.LENGTH_LONG).show();
@@ -100,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickActivity4(MenuItem item) {
         Intent intent = new Intent(this, Main4Activity.class);
+        startActivity(intent);
+    }
+
+    public void onClickActivityFragment(MenuItem item) {
+        Intent intent = new Intent(this, FragmentActivity.class);
         startActivity(intent);
     }
 

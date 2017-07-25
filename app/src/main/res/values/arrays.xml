@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="arrFragmentCourseTitle">
-        <item>"Fragments Title"</item>
-        <item>"Intents Title"</item>
-        <item>"Action Bar Title"</item>
-        <item>"Photo and Video Title"</item>
-        <item>"Android 4 Feature Title"</item>
-        <item>"Location apps Title"</item>
-        <item>"Async services Title"</item>
+        <item>@string/android_fragments_title</item>
+        <item>@string/android_intents_title</item>
+        <item>@string/android_action_bar_title</item>
+        <item>@string/android_photo_video_title</item>
+        <item>@string/android_4_features_title</item>
+        <item>@string/android_location_apps_title</item>
+        <item>@string/android_async_services_title</item>
     </string-array>
     <string-array name="arrFragmentCourseDesc">
-        <item>"Fragments Description"</item>
-        <item>"Intents Description"</item>
-        <item>"Action Bar Description"</item>
-        <item>"Photo and Video Description"</item>
-        <item>"Android 4 Feature Description"</item>
-        <item>"Location apps Description"</item>
-        <item>"Async services Description"</item>
+        <item>@string/android_fragments_description</item>
+        <item>@string/android_intents_description</item>
+        <item>@string/android_action_bar_description</item>
+        <item>@string/android_photo_video_description</item>
+        <item>@string/android_4_features_description</item>
+        <item>@string/android_location_apps_description</item>
+        <item>@string/android_async_services_description</item>
     </string-array>
 </resources>
