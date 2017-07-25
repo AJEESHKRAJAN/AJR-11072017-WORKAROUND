@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        boolean handled = false;
+        boolean handled;
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -76,33 +76,33 @@ public class MainActivity extends AppCompatActivity {
         return handled;
     }
 
-    public void onClickMenuOther(MenuItem item) {
+    private void onClickMenuOther(MenuItem item) {
 
         Toast.makeText(this, "Clicked on Other", Toast.LENGTH_LONG).show();
     }
 
 
-    public void onClickActivity2(MenuItem item) {
+    private void onClickActivity2(MenuItem item) {
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
 
-    public void onClickActivity3(MenuItem item) {
+    private void onClickActivity3(MenuItem item) {
         Intent intent = new Intent(this, Main3Activity.class);
         startActivity(intent);
     }
 
-    public void onClickActivity4(MenuItem item) {
+    private void onClickActivity4(MenuItem item) {
         Intent intent = new Intent(this, Main4Activity.class);
         startActivity(intent);
     }
 
-    public void onClickActivityFragment(MenuItem item) {
+    private void onClickActivityFragment(MenuItem item) {
         Intent intent = new Intent(this, FragmentActivity.class);
         startActivity(intent);
     }
 
-    public void onClickMenuExit(MenuItem item) {
+    private void onClickMenuExit(MenuItem item) {
         finish();
     }
 }

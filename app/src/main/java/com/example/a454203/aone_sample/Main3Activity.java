@@ -22,7 +22,7 @@ public class Main3Activity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        boolean handled = false;
+        boolean handled;
         int id = item.getItemId();
 
 
@@ -43,12 +43,12 @@ public class Main3Activity extends AppCompatActivity {
     }
 
 
-    public void onShowToast(MenuItem item) {
+    private void onShowToast(MenuItem item) {
         Toast.makeText(this, "This is a toast on Activity 3", Toast.LENGTH_SHORT).show();
 
     }
 
-    public void onCloseActivity2(MenuItem item) {
+    private void onCloseActivity2(MenuItem item) {
         finish();
     }
 }

@@ -21,7 +21,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:text="Provide Information"
+            android:text="@string/provide_information"
             android:textSize="24sp" />
 
         <Button
@@ -34,7 +34,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/btnProvInfo"
             android:layout_marginTop="10dp"
-            android:text="Take Picture"
+            android:text="@string/take_picture"
             android:textSize="24sp" />
 
         <Button
@@ -47,7 +47,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:fontFamily="sans-serif-condensed"
-            android:text="Send"
+            android:text="@string/send"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="24sp" />
 
@@ -91,6 +91,7 @@
 
         <ImageButton
             android:id="@+id/imgShowImage"
+            android:contentDescription="@string/imgShow_Picture_Cam_Desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"

@@ -23,12 +23,12 @@ public class ProvideInformationActivity extends AppCompatActivity implements Vie
         setUpViews();
     }
 
-    void setUpViews() {
+    private void setUpViews() {
         Button doneButton = (Button) findViewById(R.id.btnDone);
         doneButton.setOnClickListener(this);
     }
 
-    void handleDoneButton(Button s) {
+    private void handleDoneButton(Button s) {
         String className = getSelectedRadioGroupValue(R.id.rdoGroup);
         String personName = getEditTextValue(R.id.txtWrtName);
         String personEmail = getEditTextValue(R.id.txtWrtEmail);

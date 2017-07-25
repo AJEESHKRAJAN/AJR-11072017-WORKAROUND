@@ -16,7 +16,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         setUpUIContents();
     }
 
-    void setUpUIContents() {
+    private void setUpUIContents() {
         Button button = (Button) findViewById(R.id.activity2Button);
         button.setOnClickListener(this);
 
@@ -24,11 +24,11 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         button2.setOnClickListener(this);
     }
 
-    void handleButtonClick(Button button) {
+    private void handleButtonClick(Button button) {
         TextView textView = (TextView) findViewById(R.id.firstTopText);
         textView.setText(R.string.TextOnClick_FirstTop);
     }
-    void handleButtonClick2(Button button) {
+    private void handleButtonClick2(Button button) {
         TextView textView = (TextView) findViewById(R.id.firstTopText);
         textView.setText(R.string.button2ShowText);
     }

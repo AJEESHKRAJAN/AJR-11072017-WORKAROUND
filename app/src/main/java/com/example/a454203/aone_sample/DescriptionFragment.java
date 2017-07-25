@@ -14,8 +14,8 @@ import android.widget.TextView;
 
 public class DescriptionFragment extends Fragment {
 
-    String[] mCourseDescription;
-    TextView mCourseDescriptionTextView;
+    private String[] mCourseDescription;
+    private TextView mCourseDescriptionTextView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

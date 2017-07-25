@@ -13,10 +13,14 @@ import android.widget.Toast;
 
 public class Main4Activity extends AppCompatActivity implements View.OnClickListener {
 
-    static final int PROVIDE_INFO_REQUEST_CODE = 1000;
-    static final int TAKE_PICTURE_REQUEST_CODE = 1010;
-    Uri mPhotoPathUri;
-    String mPhotoPathName;
+    private static final int PROVIDE_INFO_REQUEST_CODE = 1000;
+    private static final int TAKE_PICTURE_REQUEST_CODE = 1010;
+    private Uri mPhotoPathUri;
+    private final String mPhotoPathName;
+
+    public Main4Activity(String mPhotoPathName) {
+        this.mPhotoPathName = mPhotoPathName;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +29,7 @@ public class Main4Activity extends AppCompatActivity implements View.OnClickList
         setUpViews();
     }
 
-    void setUpViews() {
+    private void setUpViews() {
         Button provideInfo = (Button) findViewById(R.id.btnProvInfo);
         provideInfo.setOnClickListener(this);
 
@@ -58,12 +62,12 @@ public class Main4Activity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    void handlePostBackInfoButton(Button button) {
+    private void handlePostBackInfoButton(Button button) {
 //        Intent intent = new Intent(this, ProvideInformationActivity.class);
 //        startActivityForResult(intent, PROVIDE_INFO_REQUEST_CODE);
     }
 
-    void handleTakePictureButton(Button button) {
+    private void handleTakePictureButton(Button button) {
         mPhotoPathUri = PhotoHelper.generateTimeStampPhotoFileUri();
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, mPhotoPathUri);
@@ -71,7 +75,7 @@ public class Main4Activity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    void handleMoreInformationButton(Button button) {
+    private void handleMoreInformationButton(Button button) {
         Intent intent = new Intent(this, ProvideInformationActivity.class);
         startActivityForResult(intent, PROVIDE_INFO_REQUEST_CODE);
     }
@@ -100,9 +104,9 @@ public class Main4Activity extends AppCompatActivity implements View.OnClickList
 
     private void handleProvideInfoResult(int resultCode, Intent resultIntent) {
         if (resultCode == RESULT_OK) {
-            String className = "";
-            String personName = "";
-            String personEmail = "";
+            String className;
+            String personName;
+            String personEmail;
 
             className = resultIntent.getStringExtra(ProvideInformationActivity.CLASS_NAME_EXTRA);
             personName = resultIntent.getStringExtra(ProvideInformationActivity.PERSON_NAME_EXTRA);

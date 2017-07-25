@@ -21,7 +21,7 @@ import java.util.Locale;
  * Created by HP on 19-07-2017.
  */
 
-public class PhotoHelper {
+class PhotoHelper {
     private static final String LOG_TAG = "PHOTO HELPER";
 
     public static Uri generateTimeStampPhotoFileUri() {
@@ -43,7 +43,7 @@ public class PhotoHelper {
         return photoFileUri;
     }
 
-    public static File getPhotoDirectory() {
+    private static File getPhotoDirectory() {
         File outputDir = null;
 
         String externalStorageState = Environment.getExternalStorageState();
@@ -74,9 +74,7 @@ public class PhotoHelper {
             final Bitmap thumbnail = MediaStore.Images.Thumbnails.getThumbnail(contentResolver, id,
                     MediaStore.Images.Thumbnails.MINI_KIND, null);
 
-            thumbnailImageActivity.runOnUiThread(() -> {
-                thumbnailImageView.setImageBitmap(thumbnail);
-            });
+            thumbnailImageActivity.runOnUiThread(() -> thumbnailImageView.setImageBitmap(thumbnail));
         });
 
     }

@@ -16,7 +16,7 @@ public class TitlesFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
         String[] titles = getResources().getStringArray(R.array.arrFragmentCourseTitle);
 
-        ArrayAdapter<String> titleAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, titles);
+        ArrayAdapter<String> titleAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, titles);
         setListAdapter(titleAdapter);
 
     }

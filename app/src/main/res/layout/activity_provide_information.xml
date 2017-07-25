@@ -7,7 +7,6 @@
     tools:context="com.example.a454203.aone_sample.ProvideInformationActivity">
 
     <RelativeLayout
-        android:id="@+id/rlProvideInfo"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -21,29 +20,25 @@
             android:clipChildren="false">
 
             <RadioButton
-                android:id="@+id/rdnOpt1"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:checked="true"
-                android:text="Radio Button option one clicked" />
+                android:text="@string/radio_button_option_one_clicked" />
 
             <RadioButton
-                android:id="@+id/rdnOpt2"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:text="Radio Button option 2 clicked" />
+                android:text="@string/radio_button_option_2_clicked" />
 
             <RadioButton
-                android:id="@+id/rdnOpt3"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:text="Radio Button option 3 clicked" />
+                android:text="@string/radio_button_option_3_clicked" />
 
             <RadioButton
-                android:id="@+id/rdnOpt4"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:text="Radio Button option 4 clicked" />
+                android:text="@string/radio_button_option_4_clicked" />
         </RadioGroup>
 
         <TextView
@@ -51,7 +46,7 @@
             style="@android:style/Widget.DeviceDefault.TextView"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:text="Select Course"
+            android:text="@string/select_course"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -63,7 +58,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:text="Done"
+            android:text="@string/done"
             android:textSize="24sp" />
 
         <EditText
@@ -74,7 +69,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/rdoGroup"
             android:layout_marginTop="10dp"
-            android:hint="Your Name"
+            android:hint="@string/your_name"
             android:inputType="textPersonName"
             android:paddingBottom="30dp"
             android:textAlignment="inherit"
@@ -88,7 +83,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/rdoGroup"
             android:layout_marginTop="60dp"
-            android:hint="Your Email"
+            android:hint="@string/your_email"
             android:inputType="textEmailAddress"
             android:paddingBottom="30dp"
             android:textAlignment="inherit"

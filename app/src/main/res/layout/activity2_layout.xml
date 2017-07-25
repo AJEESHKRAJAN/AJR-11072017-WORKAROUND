@@ -20,7 +20,7 @@
             android:layout_alignParentTop="true"
             android:ems="10"
             android:inputType="textMultiLine"
-            android:text="This is first top text " />
+            android:text="@string/this_is_first_top_text" />
 
         <EditText
             android:id="@+id/SecondTopText"
@@ -31,7 +31,7 @@
             android:layout_toRightOf="@+id/firstTopText"
             android:ems="10"
             android:inputType="textMultiLine"
-            android:text="This is a second top text " />
+            android:text="@string/this_is_a_second_top_text" />
 
         <Button
             android:id="@+id/activity2Button"
@@ -60,21 +60,20 @@
         tools:layout_height="0dp">
 
         <EditText
-            android:id="@+id/editText5"
             android:layout_height="wrap_content"
             android:layout_width="0px"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textMultiLine"
-            tools:layout_width="0dp" />
+            tools:layout_width="0dp"
+            tools:ignore="NestedWeights" />
 
         <EditText
-            android:id="@+id/editText3"
             android:layout_height="wrap_content"
             android:layout_width="0px"
             android:layout_weight="1"
             android:ems="10"
-            android:gravity="right"
+            android:gravity="end"
             android:inputType="textMultiLine"
             tools:layout_width="0dp" />
     </LinearLayout>
@@ -86,13 +85,13 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/bottomTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textMultiLine"
-            android:text="@string/Bottom_Text" />
+            android:text="@string/Bottom_Text"
+            tools:ignore="NestedWeights" />
     </LinearLayout>
 
 </LinearLayout>
