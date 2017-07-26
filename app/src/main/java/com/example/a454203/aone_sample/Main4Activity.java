@@ -95,6 +95,7 @@ public class Main4Activity extends AppCompatActivity implements View.OnClickList
             PhotoHelper.addPhotoToMediaStoreAndDisplayThumbnail(mPhotoPathName, this, imgView);
         } else {
             mPhotoPathUri = null;
+            mPhotoPathName = null;
             Toast.makeText(this, "User cancelled", Toast.LENGTH_LONG).show();
         }
     }
