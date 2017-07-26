@@ -15,12 +15,8 @@ public class Main4Activity extends AppCompatActivity implements View.OnClickList
 
     private static final int PROVIDE_INFO_REQUEST_CODE = 1000;
     private static final int TAKE_PICTURE_REQUEST_CODE = 1010;
-    private Uri mPhotoPathUri;
-    private final String mPhotoPathName;
-
-    public Main4Activity(String mPhotoPathName) {
-        this.mPhotoPathName = mPhotoPathName;
-    }
+    Uri mPhotoPathUri;
+    String mPhotoPathName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
