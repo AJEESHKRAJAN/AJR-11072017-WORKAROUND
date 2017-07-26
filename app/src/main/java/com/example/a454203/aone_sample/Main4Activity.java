@@ -91,6 +91,7 @@ public class Main4Activity extends AppCompatActivity implements View.OnClickList
     private void handleTakePictureResult(int resultCode, Intent resultIntent) {
         if (resultCode == RESULT_OK) {
             ImageView imgView = (ImageView) findViewById(R.id.imgShowImage);
+            mPhotoPathName = mPhotoPathUri.getPath();
             PhotoHelper.addPhotoToMediaStoreAndDisplayThumbnail(mPhotoPathName, this, imgView);
         } else {
             mPhotoPathUri = null;

@@ -89,21 +89,21 @@
             android:hint=""
             android:paddingBottom="@dimen/txtPadding" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imgShowImage"
-            android:contentDescription="@string/imgShow_Picture_Cam_Desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/btnPicture"
-            android:layout_marginLeft="96dp"
+            android:layout_marginLeft="106dp"
             android:layout_marginStart="96dp"
             android:layout_marginTop="22dp"
+            android:contentDescription="@string/imgShow_Picture_Cam_Desc"
             android:paddingBottom="85dp"
-            android:paddingLeft="50dp"
+            android:paddingLeft="150dp"
             android:paddingRight="50dp"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:layout_above="@+id/txtClassName" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
