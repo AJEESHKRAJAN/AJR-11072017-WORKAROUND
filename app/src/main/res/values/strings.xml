@@ -30,6 +30,13 @@
     <string name="android_location_apps_description">In this course we cover the wide range of location capabilities of the Android platform including determining user location, power management, translating location data into human-readable street addresses, and much more.</string>
     <string name="android_async_services_title">Android Async Programming and Services</string>
     <string name="android_async_services_description">In this course you will learn how to use Android services and asynchronous processing to create apps that provide a more responsive UX. Topics covered include Android Services, background processing, threading, async tasks, Started Services, Foreground Services, Notifications, Android Service lifecycle, and ExecutorService.</string>
+    <string name="android_fragments_title_short">Fragments</string>
+    <string name="android_intents_title_short">Intents</string>
+    <string name="android_action_bar_title_short">ActionBar</string>
+    <string name="android_photo_video_title_short">Photo/Video</string>
+    <string name="android_4_features_title_short">Android 4</string>
+    <string name="android_location_apps_title_short">Location</string>
+    <string name="android_async_services_title_short">Services</string>
     <string name="imgShow_Picture_Cam_Desc">This primarily takes photo and displays accordingly.</string>
     <string name="fragment_image">For Fragment_Image</string>
     <string name="this_is_first_top_text">This is first top text</string>
@@ -45,4 +52,7 @@
     <string name="done">Done</string>
     <string name="your_name">Your Name</string>
     <string name="your_email">Your Email</string>
+    <string name="title_activity_swipe_navigation_main">SwipeNavigationMain</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="swipe_nav_pre_course_desc">Android 4.0 includes a number of new developer features that improve the ability for applications to support a wide variety of devices and enhance developer productivity. In this course we will exam many of these new features including Android user interface Fragments, the ActionBar, networking features, and the new Calendar API.</string>
 </resources>

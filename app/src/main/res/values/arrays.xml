@@ -9,6 +9,15 @@
         <item>@string/android_location_apps_title</item>
         <item>@string/android_async_services_title</item>
     </string-array>
+    <string-array name="arrFragmentCourseTitlesShort">
+        <item>@string/android_fragments_title_short</item>
+        <item>@string/android_intents_title_short</item>
+        <item>@string/android_action_bar_title_short</item>
+        <item>@string/android_photo_video_title_short</item>
+        <item>@string/android_4_features_title_short</item>
+        <item>@string/android_location_apps_title_short</item>
+        <item>@string/android_async_services_title_short</item>
+    </string-array>
     <string-array name="arrFragmentCourseDesc">
         <item>@string/android_fragments_description</item>
         <item>@string/android_intents_description</item>

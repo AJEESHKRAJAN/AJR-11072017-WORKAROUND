@@ -14,17 +14,17 @@
 
 
         <ImageView
-            android:contentDescription="@string/fragment_image"
             android:layout_width="217dp"
             android:layout_height="87dp"
-            app:srcCompat="@drawable/smile_self"
-            tools:layout_editor_absoluteX="92dp"
-            tools:layout_editor_absoluteY="86dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="85dp"
             android:layout_marginStart="85dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:contentDescription="@string/fragment_image"
+            app:srcCompat="@mipmap/tomcat"
+            tools:layout_editor_absoluteX="92dp"
+            tools:layout_editor_absoluteY="86dp" />
     </RelativeLayout>
 
     <TextView
