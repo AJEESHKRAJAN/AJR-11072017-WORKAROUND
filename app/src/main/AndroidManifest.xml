@@ -33,7 +33,7 @@
         <activity android:name=".ProvideInformationActivity" />
         <activity android:name=".FragmentActivity" />
         <activity
-            android:name=".SwipeNavigationMain"
+            android:name=".SwipeNavigationMainActivity"
             android:label="@string/title_activity_swipe_navigation_main"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

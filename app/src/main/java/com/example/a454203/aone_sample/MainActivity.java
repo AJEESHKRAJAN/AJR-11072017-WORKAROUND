@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 onClickActivityFragment(item);
                 handled = true;
                 break;
+            case R.id.actionSwipeNavigation:
+                onClickActivitySwipeNavigationFragment(item);
+                handled = true;
+                break;
 
             default:
                 handled = super.onOptionsItemSelected(item);
@@ -99,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClickActivityFragment(MenuItem item) {
         Intent intent = new Intent(this, FragmentActivity.class);
+        startActivity(intent);
+    }
+
+    private void onClickActivitySwipeNavigationFragment(MenuItem item) {
+        Intent intent = new Intent(this, SwipeNavigationMainActivity.class);
         startActivity(intent);
     }
 

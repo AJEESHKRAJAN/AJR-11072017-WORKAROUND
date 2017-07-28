@@ -10,10 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class SwipeNavigationMain extends android.support.v4.app.FragmentActivity {
+public class SwipeNavigationMainActivity extends android.support.v4.app.FragmentActivity {
 
 
-    //private SectionsPagerAdapter mSectionsPagerAdapter;
+    SwipeCoursePagerAdapter mSwipeCoursePagerAdapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -26,14 +26,12 @@ public class SwipeNavigationMain extends android.support.v4.app.FragmentActivity
         setContentView(R.layout.activity_swipe_navigation_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        //mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         //mViewPager.setAdapter(mSectionsPagerAdapter);
+        mSwipeCoursePagerAdapter = new SwipeCoursePagerAdapter(getSupportFragmentManager(), this);
+        mViewPager.setAdapter(mSwipeCoursePagerAdapter);
+
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
