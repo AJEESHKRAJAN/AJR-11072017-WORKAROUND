@@ -35,6 +35,10 @@
         <activity
             android:name=".SwipeNavigationMainActivity"
             android:label="@string/title_activity_swipe_navigation_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SwipeNav2"
+            android:label="@string/title_activity_swipe_nav2"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
