@@ -3,14 +3,14 @@ package com.example.a454203.aone_sample;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
-public class SwipeNavigationMainActivity extends android.support.v4.app.FragmentActivity {
+public class SwipeNavigationMainActivity extends FragmentActivity {
 
 
     SwipeCoursePagerAdapter mSwipeCoursePagerAdapter;
@@ -24,8 +24,8 @@ public class SwipeNavigationMainActivity extends android.support.v4.app.Fragment
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipe_navigation_main);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setHasOptionsMenu(true);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         //mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -33,17 +33,12 @@ public class SwipeNavigationMainActivity extends android.support.v4.app.Fragment
         mViewPager.setAdapter(mSwipeCoursePagerAdapter);
 
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(mViewPager);
+//        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+//        tabLayout.setupWithViewPager(mViewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show());
 
     }
 
@@ -54,7 +49,11 @@ public class SwipeNavigationMainActivity extends android.support.v4.app.Fragment
         getMenuInflater().inflate(R.menu.menu_swipe_navigation_main, menu);
         return true;
     }
-
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//        // TODO Add your menu entries here
+//        super.onCreateOptionsMenu(menu, inflater);
+//    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -69,6 +68,4 @@ public class SwipeNavigationMainActivity extends android.support.v4.app.Fragment
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }

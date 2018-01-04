@@ -34,6 +34,10 @@ public class SwipeCoursePagerAdapter extends FragmentPagerAdapter {
         bundleArguments.putInt(SwipeNavigationCourseFragment.TOP_CARD, translateTopCardIndex(position));
         bundleArguments.putInt(SwipeNavigationCourseFragment.COURSE_TYPE_LOGO, R.drawable.ps_android_logo);
 
+//         Use page index to simulate some courses have references and some not
+        boolean hasRefs = position % 2 == 0;
+        bundleArguments.putBoolean(SwipeNavigationCourseFragment.COURSE_HAS_REFERENCES_LIST, hasRefs);
+
         SwipeNavigationCourseFragment swpCourseFrag = new SwipeNavigationCourseFragment();
         swpCourseFrag.setArguments(bundleArguments);
         return swpCourseFrag;

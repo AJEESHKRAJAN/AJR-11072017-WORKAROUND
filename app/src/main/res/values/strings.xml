@@ -58,4 +58,19 @@
     <string name="swipe_navigation_fragments">Swipe Navigation - Fragments</string>
     <string name="image_for_showing">Image for showing</string>
     <string name="this_is_the_place_where_each_individual_course_s_description_will_appear">This is the place where each individual course\'s description will appear</string>
+    <string name="action_view">View</string>
+    <string name="action_contents">Contents</string>
+    <string name="action_website">Website</string>
+    <string name="action_description">Description</string>
+    <string name="action_assessment">Assessment</string>
+    <string name="action_exercises">Exercises</string>
+    <string name="action_refs">Related References</string>
+    <string name="title_action_view">View Video</string>
+    <string name="title_action_contents">Table of Contents</string>
+    <string name="title_action_website">Website</string>
+    <string name="title_action_description">See Description</string>
+    <string name="title_action_assessment">Take Assessment</string>
+    <string name="title_action_exercises">Download Exercises</string>
+    <string name="title_action_refs">Visit Related References</string>
+
 </resources>
