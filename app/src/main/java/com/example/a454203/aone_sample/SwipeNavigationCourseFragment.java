@@ -108,18 +108,18 @@ public class SwipeNavigationCourseFragment extends Fragment {
                 handled = super.onOptionsItemSelected(item);
         }
 
-//        if (courseActionResourceId != COURSE_ACTION_NOT_SET)
-//            showActionActivity(courseActionResourceId);
+        if (courseActionResourceId != COURSE_ACTION_NOT_SET)
+            showActionActivity(courseActionResourceId);
 
         return handled;
     }
 
-//    private void showActionActivity(int courseActionResourceId) {
-//        Intent intent = new Intent(getActivity(), SwipeCourseActionsActivityClass.class);
-//        intent.putExtra(SwipeCourseActionsActivityClass.COURSE_ACTION, getString(courseActionResourceId));
-//        intent.putExtra(SwipeCourseActionsActivityClass.COURSE_TITLE, mCourseTitle);
-//        intent.putExtra(SwipeCourseActionsActivityClass.TOP_CARD, mTopCardResourceId);
-//
-//        startActivity(intent);
-//    }
+    private void showActionActivity(int courseActionResourceId) {
+        Intent intent = new Intent(getActivity(), SwipeCourseActionsActivityClass.class);
+        intent.putExtra(SwipeCourseActionsActivityClass.COURSE_ACTION, getString(courseActionResourceId));
+        intent.putExtra(SwipeCourseActionsActivityClass.COURSE_TITLE, mCourseTitle);
+        intent.putExtra(SwipeCourseActionsActivityClass.TOP_CARD, mTopCardResourceId);
+
+        startActivity(intent);
+    }
 }

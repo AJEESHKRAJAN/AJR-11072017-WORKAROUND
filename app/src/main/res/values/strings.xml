@@ -74,5 +74,6 @@
     <string name="title_action_refs">Visit Related References</string>
     <string name="title_activity_swipe_nav2">SwipeNav2</string>
     <string name="scroll_navigation_fragments">Scroll - Navigation Fragments</string>
+    <string name="title_actions_activity_swipe_nav2">Swipe Navigation Actions Activity Class</string>
 
 </resources>
