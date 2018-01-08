@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +17,7 @@ import android.widget.TextView;
  * Created by ajesh on 04-01-2018.
  */
 
-public class SwipeCourseActionsActivityClass extends Activity {
+public class SwipeCourseActionsActivityClass extends AppCompatActivity {
     public final static String COURSE_ACTION = "course action";
     public final static String COURSE_TITLE = SwipeNavigationCourseFragment.COURSE_TITLE;
     public final static String TOP_CARD = SwipeNavigationCourseFragment.TOP_CARD;
@@ -30,8 +32,16 @@ public class SwipeCourseActionsActivityClass extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipe_navigation_action_layout);
+       // this.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
+        if (mToolbar != null) {
+            setSupportActionBar(mToolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         Intent startIntent = getIntent();
+
 
         mCourseAction = startIntent.getStringExtra(COURSE_ACTION);
         mCourseTitle = startIntent.getStringExtra(COURSE_TITLE);
@@ -57,7 +67,7 @@ public class SwipeCourseActionsActivityClass extends Activity {
     }
 
     private void configureActionBar(String courseAction) {
-        ActionBar actionBar = getActionBar();
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(courseAction);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
