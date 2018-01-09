@@ -9,36 +9,44 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
-public class SwipeNav2 extends AppCompatActivity {
+public class SwipeNav2 extends AppCompatActivity implements ListView.OnItemClickListener{
 
     SwipeCoursePagerAdapter mSwipeCoursePagerAdapter;
-    private ViewPager mViewPager;
+    ViewPager mViewPager;
+
+    NavigationDrawerSoleHelper mNavigationDrawerSoleHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipe_nav2);
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
-
-        if (mToolbar != null) {
-            setSupportActionBar(mToolbar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+//        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(mToolbar);
+//
+//        if (mToolbar != null) {
+//            setSupportActionBar(mToolbar);
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        }
         mViewPager = (ViewPager) findViewById(R.id.container);
         //mViewPager.setAdapter(mSectionsPagerAdapter);
         mSwipeCoursePagerAdapter = new SwipeCoursePagerAdapter(getSupportFragmentManager(), this);
         mViewPager.setAdapter(mSwipeCoursePagerAdapter);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        mNavigationDrawerSoleHelper =  new NavigationDrawerSoleHelper();
+        mNavigationDrawerSoleHelper.init(this,this);
+
+
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
     }
 
     @Override
@@ -63,4 +71,9 @@ public class SwipeNav2 extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        mSwipeCoursePagerAdapter.setCourseLib(position);
+        mNavigationDrawerSoleHelper.handleSelect(position);
+    }
 }
