@@ -77,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 onClickActivitySwipeNavigationFragment(item);
                 handled = true;
                 break;
+            case R.id.actionNavigationDrawer:
+                onClickActivityNavigationDrawerSole(item);
+                handled = true;
+                break;
 
             default:
                 handled = super.onOptionsItemSelected(item);
@@ -118,6 +122,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClickActivitySwipeNavigationFragment(MenuItem item) {
         Intent intent = new Intent(this, SwipeNav2.class);
+        startActivity(intent);
+    }
+
+    private void onClickActivityNavigationDrawerSole(MenuItem item) {
+        Intent intent = new Intent(this, NavigationDrawerSoleActivity.class);
         startActivity(intent);
     }
 

@@ -28,6 +28,9 @@
         android:id="@+id/actionSwipeNavigation"
         android:title="@string/swipe_navigation_fragments" />
     <item
+        android:id="@+id/actionNavigationDrawer"
+        android:title="@string/navigation_drawer_sole" />
+    <item
         android:id="@+id/actionExit"
         android:title="@string/actionExit" />
 
