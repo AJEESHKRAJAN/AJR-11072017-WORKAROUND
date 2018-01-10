@@ -1,6 +1,9 @@
 package com.example.a454203.aone_sample;
 
+import android.app.ActionBar;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
@@ -9,10 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class SwipeNav2 extends AppCompatActivity implements ListView.OnItemClickListener{
+public class SwipeNav2 extends AppCompatActivity implements ListView.OnItemClickListener {
 
     SwipeCoursePagerAdapter mSwipeCoursePagerAdapter;
     ViewPager mViewPager;
@@ -22,6 +26,7 @@ public class SwipeNav2 extends AppCompatActivity implements ListView.OnItemClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_swipe_nav2);
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -30,13 +35,19 @@ public class SwipeNav2 extends AppCompatActivity implements ListView.OnItemClick
             setSupportActionBar(mToolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
+        // experiment with the ActionBar
+       // ActionBar actionBar = getActionBar();
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         mViewPager = (ViewPager) findViewById(R.id.container);
         //mViewPager.setAdapter(mSectionsPagerAdapter);
         mSwipeCoursePagerAdapter = new SwipeCoursePagerAdapter(getSupportFragmentManager(), this);
         mViewPager.setAdapter(mSwipeCoursePagerAdapter);
 
-        mNavigationDrawerSoleHelper =  new NavigationDrawerSoleHelper();
-        mNavigationDrawerSoleHelper.init(this,this);
+        mNavigationDrawerSoleHelper = new NavigationDrawerSoleHelper();
+        mNavigationDrawerSoleHelper.init(this, this , actionBar);
 
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -57,23 +68,32 @@ public class SwipeNav2 extends AppCompatActivity implements ListView.OnItemClick
     }
 
     @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        mSwipeCoursePagerAdapter.setCourseLib(position);
+        mNavigationDrawerSoleHelper.handleSelect(position);
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mNavigationDrawerSoleHelper.syncState();
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        mNavigationDrawerSoleHelper.handleOnPrepareOptionsMenu(menu);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
+        mNavigationDrawerSoleHelper.handleOnOptionsItemSelected(item);
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        mSwipeCoursePagerAdapter.setCourseLib(position);
-        mNavigationDrawerSoleHelper.handleSelect(position);
+    public void onConfigurationChanged(Configuration newConfig) {
+        mNavigationDrawerSoleHelper.syncState();
+        super.onConfigurationChanged(newConfig);
     }
 }

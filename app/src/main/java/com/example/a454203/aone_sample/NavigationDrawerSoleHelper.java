@@ -16,22 +16,26 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import android.support.v7.app.AppCompatActivity;
 /**
  * Created by 454203 on 1/9/2018.
  */
 
-public class NavigationDrawerSoleHelper {
+public class NavigationDrawerSoleHelper extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
     ListView mDrawerListView;
+    Toolbar mToolbar;
     private ActionBarDrawerToggle mDrawerToggle;
 
-    public void init(Activity theActivity, ListView.OnItemClickListener listener) {
+    public void init(Activity theActivity, ListView.OnItemClickListener listener , android.support.v7.app.ActionBar theActionBar) {
         mDrawerLayout = (DrawerLayout) theActivity.findViewById(R.id.swipe_drawer_layout);
         mDrawerListView = (ListView) theActivity.findViewById(R.id.left_drawer);
 
@@ -44,35 +48,36 @@ public class NavigationDrawerSoleHelper {
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 
         mDrawerListView.setItemChecked(0, true);
-       // setupActionBar(theActivity);
+
+        mToolbar = (Toolbar) theActivity.findViewById(R.id.toolbar_for_drawer);
+
+        setupActionBar(theActivity, mToolbar ,  theActionBar);
 
     }
 
-    private void setupActionBar(Activity theActivity) {
+    private void setupActionBar(Activity theActivity, Toolbar theToolbar,android.support.v7.app.ActionBar theActionBar) {
         final Activity activity = theActivity;
-        ActionBar actionBar = theActivity.getActionBar();
 
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        android.support.v7.app.ActionBar actionBar = theActionBar;
+//        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
-//        mDrawerToggle = new ActionBarDrawerToggle(
-//                theActivity,
-//                mDrawerLayout,
-//                R.drawable.ic_drawer,
-//                R.string.open_drawer_message,
-//                R.string.close_drawer_message
-//        ) {
-//            @Override
-//            public void onDrawerClosed(View drawerView) {
-//                activity.invalidateOptionsMenu();
-//                super.onDrawerClosed(drawerView);
-//            }
-//
-//            @Override
-//            public void onDrawerOpened(View drawerView) {
-//                activity.invalidateOptionsMenu();
-//                super.onDrawerOpened(drawerView);
-//            }
-//        };
+        mDrawerToggle = new ActionBarDrawerToggle(theActivity, mDrawerLayout, theToolbar, R.string.open_drawer_message, R.string.close_drawer_message)
+        {
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                activity.invalidateOptionsMenu();
+                super.onDrawerClosed(drawerView);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                activity.invalidateOptionsMenu();
+                super.onDrawerOpened(drawerView);
+            }
+        };
 
     }
 

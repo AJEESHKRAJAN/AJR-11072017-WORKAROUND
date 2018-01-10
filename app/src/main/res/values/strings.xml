@@ -79,4 +79,6 @@
     <string name="navigation_drawer_sole">Navigation Drawer - Sole</string>
     <string name="drawerText1">Drawer</string>
 
+    <string name="open_drawer_message">Open course categories</string>
+    <string name="close_drawer_message">Close course categories</string>
 </resources>
