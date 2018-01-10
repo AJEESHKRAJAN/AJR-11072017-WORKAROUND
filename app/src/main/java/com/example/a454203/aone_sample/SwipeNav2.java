@@ -23,13 +23,13 @@ public class SwipeNav2 extends AppCompatActivity implements ListView.OnItemClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipe_nav2);
-//        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(mToolbar);
-//
-//        if (mToolbar != null) {
-//            setSupportActionBar(mToolbar);
-//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        }
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        if (mToolbar != null) {
+            setSupportActionBar(mToolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         mViewPager = (ViewPager) findViewById(R.id.container);
         //mViewPager.setAdapter(mSectionsPagerAdapter);
         mSwipeCoursePagerAdapter = new SwipeCoursePagerAdapter(getSupportFragmentManager(), this);
