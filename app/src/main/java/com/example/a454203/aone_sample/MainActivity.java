@@ -81,7 +81,10 @@ public class MainActivity extends AppCompatActivity {
                 onClickActivityNavigationDrawerSole(item);
                 handled = true;
                 break;
-
+            case R.id.actionImplicitIntents:
+                onClickActivityImplicitIntents(item);
+                handled = true;
+                break;
             default:
                 handled = super.onOptionsItemSelected(item);
         }
@@ -127,6 +130,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClickActivityNavigationDrawerSole(MenuItem item) {
         Intent intent = new Intent(this, NavigationDrawerSoleActivity.class);
+        startActivity(intent);
+    }
+
+    private void onClickActivityImplicitIntents(MenuItem item) {
+        Intent intent = new Intent(this, ImplicitIntentsActivity.class);
         startActivity(intent);
     }
 

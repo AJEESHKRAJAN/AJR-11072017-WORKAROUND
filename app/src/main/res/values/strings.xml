@@ -81,4 +81,9 @@
 
     <string name="open_drawer_message">Open course categories</string>
     <string name="close_drawer_message">Close course categories</string>
+    <string name="title_activity_implicit_intents">Implicit Intents Activity</string>
+    <string name="make_call">Make Call</string>
+    <string name="show_a_web_page">Show a Web Page!</string>
+    <string name="browse_a_course">Browse a Course...</string>
+    <string name="explore_implicit_intents">Explore Implicit Intents</string>
 </resources>

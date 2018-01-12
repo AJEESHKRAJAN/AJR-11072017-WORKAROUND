@@ -30,6 +30,9 @@
     <item
         android:id="@+id/actionNavigationDrawer"
         android:title="@string/navigation_drawer_sole" />
+  <item
+        android:id="@+id/actionImplicitIntents"
+        android:title="@string/explore_implicit_intents" />
     <item
         android:id="@+id/actionExit"
         android:title="@string/actionExit" />
