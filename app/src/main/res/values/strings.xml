@@ -86,4 +86,11 @@
     <string name="show_a_web_page">Show a Web Page!</string>
     <string name="browse_a_course">Browse a Course...</string>
     <string name="explore_implicit_intents">Explore Implicit Intents</string>
+    <string name="title_activity_app_model_basic">AppModel - Basic Broadcast</string>
+    <string name="title_activity_app_model_basic_other">AppModelBasicOther</string>
+    <string name="launch_other_activity">Launch Other Activity</string>
+    <string name="monitor_airplane_mode_activity">Monitor Airplane Mode (Activity)</string>
+    <string name="monitor_airplane_mode_app">Monitor Airplane Mode (App)</string>
+    <string name="stop_monitoring_airplane_mode_app">Stop Monitoring Airplane Mode (App)</string>
+    <string name="app_model_basic_broadcast_receivers">App Model - Basic Broadcast Receivers</string>
 </resources>

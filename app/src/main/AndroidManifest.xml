@@ -46,10 +46,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="com.example.coursebrowse.action.BROWSE_COURSE" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="com.example.coursebrowse.action.BROWSE_COURSE" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".SwipeCourseActionsActivityClass"
@@ -59,12 +60,17 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.a454203.aone_sample.SwipeNav2" />
-
         </activity>
         <activity android:name=".NavigationDrawerSoleActivity" />
         <activity
             android:name=".ImplicitIntentsActivity"
-            android:label="@string/title_activity_implicit_intents"></activity>
+            android:label="@string/title_activity_implicit_intents" />
+        <activity
+            android:name=".AppModelBasic"
+            android:label="@string/title_activity_app_model_basic" />
+        <activity
+            android:name=".AppModelBasicOther"
+            android:label="@string/title_activity_app_model_basic_other"></activity>
     </application>
 
 </manifest>

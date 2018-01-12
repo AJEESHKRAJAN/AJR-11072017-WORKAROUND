@@ -37,9 +37,9 @@ public class ImplicitIntentsActivity extends Activity {
     }
 
     public void setUpBrowseCourse() {
-        Intent intent = new Intent("com.example.coursebrowse.action.BROWSE_COURSE");
-        intent.putExtra("course_lib",2);
-        startActivity(intent);
+//        Intent intent = new Intent("com.example.coursebrowse.action.BROWSE_COURSE");
+//        intent.putExtra("course_lib",2);
+//        startActivity(intent);
     }
 
     @Override

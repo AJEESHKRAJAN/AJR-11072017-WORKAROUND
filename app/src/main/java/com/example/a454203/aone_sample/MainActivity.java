@@ -85,12 +85,17 @@ public class MainActivity extends AppCompatActivity {
                 onClickActivityImplicitIntents(item);
                 handled = true;
                 break;
+            case R.id.actionAppModelBasic:
+                onClickActivityAppModelBasic(item);
+                handled = true;
+                break;
             default:
                 handled = super.onOptionsItemSelected(item);
         }
 
         return handled;
     }
+
 
     private void onClickMenuOther(MenuItem item) {
 
@@ -135,6 +140,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClickActivityImplicitIntents(MenuItem item) {
         Intent intent = new Intent(this, ImplicitIntentsActivity.class);
+        startActivity(intent);
+    }
+
+    private void onClickActivityAppModelBasic(MenuItem item) {
+        Intent intent = new Intent(this, AppModelBasic.class);
         startActivity(intent);
     }
 
