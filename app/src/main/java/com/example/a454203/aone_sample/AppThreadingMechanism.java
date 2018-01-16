@@ -119,14 +119,11 @@ public class AppThreadingMechanism extends Activity {
         Handler handler = getMyHandler();
         long callingThreadId = Thread.currentThread().getId();
 
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                long runningThreadId = Thread.currentThread().getId();
-                String messageToDisplay = String.format(Locale.US, "Runnable implementation running on thread %d - called from thread %d",
-                        runningThreadId, callingThreadId);
-                Log.d("AppThreadMech-RunHdl", messageToDisplay);
-            }
+        handler.post(() -> {
+            long runningThreadId = Thread.currentThread().getId();
+            String messageToDisplay = String.format(Locale.US, "Runnable implementation running on thread %d - called from thread %d",
+                    runningThreadId, callingThreadId);
+            Log.d("AppThreadMech-RunHdl", messageToDisplay);
         });
     }
 
