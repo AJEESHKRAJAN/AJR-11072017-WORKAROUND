@@ -37,6 +37,9 @@
         android:id="@+id/actionAppModelBasic"
         android:title="@string/app_model_basic_broadcast_receivers" />
     <item
+        android:id="@+id/actionAppThreadingMechanism"
+        android:title="@string/app_threading_mechanism" />
+    <item
         android:id="@+id/actionExit"
         android:title="@string/actionExit" />
 

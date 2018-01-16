@@ -6,7 +6,12 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- android:required="true" /> -->
     <application
@@ -46,11 +51,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!--<intent-filter>-->
-                <!--<action android:name="com.example.coursebrowse.action.BROWSE_COURSE" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="com.example.coursebrowse.action.BROWSE_COURSE" /> -->
 
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
+
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".SwipeCourseActionsActivityClass"
@@ -70,7 +76,10 @@
             android:label="@string/title_activity_app_model_basic" />
         <activity
             android:name=".AppModelBasicOther"
-            android:label="@string/title_activity_app_model_basic_other"></activity>
+            android:label="@string/title_activity_app_model_basic_other" />
+        <activity
+            android:name=".AppThreadingMechanism"
+            android:label="@string/title_activity_app_threading_mechanism"></activity>
     </application>
 
 </manifest>

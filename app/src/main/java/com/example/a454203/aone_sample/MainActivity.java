@@ -89,13 +89,16 @@ public class MainActivity extends AppCompatActivity {
                 onClickActivityAppModelBasic(item);
                 handled = true;
                 break;
+            case R.id.actionAppThreadingMechanism:
+                onClickActivityAppThreadingMechanism(item);
+                handled = true;
+                break;
             default:
                 handled = super.onOptionsItemSelected(item);
         }
 
         return handled;
     }
-
 
     private void onClickMenuOther(MenuItem item) {
 
@@ -145,6 +148,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClickActivityAppModelBasic(MenuItem item) {
         Intent intent = new Intent(this, AppModelBasic.class);
+        startActivity(intent);
+    }
+
+    private void onClickActivityAppThreadingMechanism(MenuItem item) {
+        Intent intent = new Intent(this, AppThreadingMechanism.class);
         startActivity(intent);
     }
 
