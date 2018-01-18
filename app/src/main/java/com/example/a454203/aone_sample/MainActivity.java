@@ -93,6 +93,10 @@ public class MainActivity extends AppCompatActivity {
                 onClickActivityAppThreadingMechanism(item);
                 handled = true;
                 break;
+            case R.id.actionBackgroundWorkService:
+                onClickActivityBackgroundWorkService(item);
+                handled = true;
+                break;
             default:
                 handled = super.onOptionsItemSelected(item);
         }
@@ -153,6 +157,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClickActivityAppThreadingMechanism(MenuItem item) {
         Intent intent = new Intent(this, AppThreadingMechanism.class);
+        startActivity(intent);
+    }
+
+    private void onClickActivityBackgroundWorkService(MenuItem item) {
+        Intent intent = new Intent(this, BackgroundWorkServiceActivity.class);
         startActivity(intent);
     }
 

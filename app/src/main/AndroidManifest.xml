@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -79,7 +78,15 @@
             android:label="@string/title_activity_app_model_basic_other" />
         <activity
             android:name=".AppThreadingMechanism"
-            android:label="@string/title_activity_app_threading_mechanism"></activity>
+            android:label="@string/title_activity_app_threading_mechanism" />
+        <activity
+            android:name=".BackgroundWorkServiceActivity"
+            android:label="@string/title_activity_background_work_service" />
+
+        <service
+            android:name=".BackgroundWorkService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

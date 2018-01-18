@@ -40,6 +40,9 @@
         android:id="@+id/actionAppThreadingMechanism"
         android:title="@string/app_threading_mechanism" />
     <item
+        android:id="@+id/actionBackgroundWorkService"
+        android:title="@string/service_background_work" />
+    <item
         android:id="@+id/actionExit"
         android:title="@string/actionExit" />
 
