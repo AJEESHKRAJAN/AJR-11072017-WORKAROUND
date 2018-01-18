@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
@@ -30,10 +31,12 @@ import java.util.Locale;
 public class AppThreadingMechanism extends Activity {
 
     private static final int MAX_WRITES = 5;
-
+    String fileName1 = "aOneSample_ex1.txt";
+    String fileName2 = "aOneSample_ex2.txt";
     HandlerThread mHandlerThread;
     Handler mHandler;
     LocationListener mLocationListener;
+    FileHelper fileHelper = new FileHelper();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,17 +64,18 @@ public class AppThreadingMechanism extends Activity {
     }
 
     private void btnWriteToFileOnClick(Button view) {
-        FileOutputStream fileOutputStream = openOutStream("testout.dat");
+        FileOutputStream fileOutputStream = fileHelper.openOutStream(this,fileName1);
 
         for (int i = 0; i < MAX_WRITES; i++) {
-            simpleWrite(fileOutputStream, "Hello. This is a test write");
+            fileHelper. simpleWrite(fileOutputStream, "Hello. This is a test write \n" + "\t");
         }
-        closeOutStream(fileOutputStream);
+        fileHelper.closeOutStream(fileOutputStream);
     }
+
 
     @SuppressLint("StaticFieldLeak")
     private void btnWriteToFileAsyncTaskOnClick(Button view) {
-        String writeText = "Async task simple demo - Illustration";
+        String writeText = "Async task simple demo - Illustration. \n" + "\t ";
 
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBarMain);
         initializeProgressBar(progressBar);
@@ -81,13 +85,13 @@ public class AppThreadingMechanism extends Activity {
             @Override
             protected Void doInBackground(String... strings) {
                 String submittedText = strings[0];
-                FileOutputStream fileOutputStream = openOutStream("testout.dat");
+                FileOutputStream fileOutputStream = fileHelper. openOutStream(getBaseContext(),fileName2);
 
                 for (int i = 0; i < MAX_WRITES; i++) {
-                    slowWrite(fileOutputStream, submittedText);
+                    fileHelper.slowWrite(fileOutputStream, submittedText);
                     publishProgress(i);
                 }
-                closeOutStream(fileOutputStream);
+                fileHelper.closeOutStream(fileOutputStream);
                 return null;
             }
 
@@ -165,36 +169,6 @@ public class AppThreadingMechanism extends Activity {
         stopLocationMonitoring();
     }
 
-    protected FileOutputStream openOutStream(String fileName) {
-        FileOutputStream fileOutputStream = null;
-        try {
-            fileOutputStream = openFileOutput("testout.dat", MODE_PRIVATE);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            Log.getStackTraceString(ex);
-        }
-        return fileOutputStream;
-    }
-
-    protected void closeOutStream(FileOutputStream fileOutputStream) {
-        if (fileOutputStream != null) {
-            try {
-                fileOutputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-                Log.getStackTraceString(e);
-            }
-        }
-    }
-
-    private void simpleWrite(FileOutputStream fileOutputStream, String s) {
-        try {
-            fileOutputStream.write(s.getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.getStackTraceString(e);
-        }
-    }
 
     private void initializeProgressBar(ProgressBar progressBar) {
         progressBar.setMax(MAX_WRITES);
@@ -204,18 +178,6 @@ public class AppThreadingMechanism extends Activity {
 
     private void displayStartedMessage() {
         Toast.makeText(this, "File writing operation Initiated via Async Task.", Toast.LENGTH_SHORT).show();
-    }
-
-    private void slowWrite(FileOutputStream fileOutputStream, String writeText) {
-
-        try {
-            fileOutputStream.write(writeText.getBytes());
-            Thread.sleep(1500, 0);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     private void displayCompletionMessage() {
