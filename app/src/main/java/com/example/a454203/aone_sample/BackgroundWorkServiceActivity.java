@@ -41,7 +41,8 @@ public class BackgroundWorkServiceActivity extends Activity {
     private void btnDoLongRunningWorkOnClick(Button button) {
         LogHelper.LogThreadId(backgroundWorkLogName, "Logging - Long running method Started");
 
-        Intent intent =  new Intent(this,BackgroundWorkService.class);
+//        Intent intent =  new Intent(this,BackgroundWorkService.class);
+        Intent intent =  new Intent(this,BackgroundWorkIntentService.class);
         intent.putExtra("filename",fileName1);
         intent.putExtra("MAX_WRITES",MAX_WRITES);
         intent.putExtra("writeText",writeTextA);
@@ -50,10 +51,19 @@ public class BackgroundWorkServiceActivity extends Activity {
     }
 
     private void btnStartMonitoringOnClick(Button button) {
-        LogHelper.LogThreadId(backgroundWorkLogName, "Logging - Background Work service Started");
+        LogHelper.LogThreadId(backgroundWorkLogName, "Logging - Background Work Monitoring service Initiated - Start");
+
+        Intent intent = new Intent(this,BackgroundWorkMonitoringService.class);
+        intent.setAction(BackgroundWorkMonitoringService.START_ACTION);
+        startService(intent);
+
     }
 
     private void btnStopMonitoringOnClick(Button button) {
-        LogHelper.LogThreadId(backgroundWorkLogName, "Logging - Background Work service Started");
+        LogHelper.LogThreadId(backgroundWorkLogName, "Logging - Background Work Monitoring service Initiated - Stop");
+
+        Intent intent = new Intent(this,BackgroundWorkMonitoringService.class);
+        intent.setAction(BackgroundWorkMonitoringService.STOP_ACTION);
+        startService(intent);
     }
 }
