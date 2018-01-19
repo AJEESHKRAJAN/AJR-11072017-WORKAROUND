@@ -43,6 +43,9 @@
         android:id="@+id/actionBackgroundWorkService"
         android:title="@string/service_background_work" />
     <item
+        android:id="@+id/actionBroadcastReceiverBtrySts"
+        android:title="@string/broadcast_receiver_battery_status" />
+    <item
         android:id="@+id/actionExit"
         android:title="@string/actionExit" />
 

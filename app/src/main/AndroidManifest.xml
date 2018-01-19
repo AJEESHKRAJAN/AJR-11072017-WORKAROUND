@@ -93,7 +93,29 @@
         <service
             android:name=".BackgroundWorkMonitoringService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.example.a454203.aone_sample.START_ACTION"/>
+                <action android:name="com.example.a454203.aone_sample.STOP_ACTION"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".BroadcastReceiverBatteryStatusActivity"
+            android:label="@string/title_activity_broadcast_receiver_battery_status" />
+
+        <receiver
+            android:name=".BatteryStatusBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".AirplaneModeBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

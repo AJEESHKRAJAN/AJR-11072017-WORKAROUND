@@ -106,4 +106,11 @@
     <string name="do_long_running_work">Do Long Running Work</string>
     <string name="start_monitoring">Start Monitoring</string>
     <string name="stop_monitoring">Stop Monitoring</string>
+    <string name="title_activity_broadcast_receiver_battery_status">
+        BroadcastReceiverBatteryStatusActivity
+    </string>
+    <string name="broadcast_receiver_battery_status">Broadcast Receiver - Battery Status</string>
+    <string name="start_battery_status_log">Start Battery Status Log</string>
+    <string name="stop_battery_status_log">Stop Battery Status Log</string>
+    <string name="battery_status_image">Battery Status Image</string>
 </resources>

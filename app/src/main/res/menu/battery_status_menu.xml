@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/batteryStatusStart"
+        android:title="@string/start_battery_status_log" />
+    <item
+        android:id="@+id/batteryStatusStop"
+        android:title="@string/stop_battery_status_log" />
+</menu>

@@ -97,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
                 onClickActivityBackgroundWorkService(item);
                 handled = true;
                 break;
+            case R.id.actionBroadcastReceiverBtrySts:
+                onClickActivityBroadcastBatteryStatus(item);
+                handled = true;
+                break;
             default:
                 handled = super.onOptionsItemSelected(item);
         }
@@ -162,6 +166,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClickActivityBackgroundWorkService(MenuItem item) {
         Intent intent = new Intent(this, BackgroundWorkServiceActivity.class);
+        startActivity(intent);
+    }
+
+    private void onClickActivityBroadcastBatteryStatus(MenuItem item) {
+        Intent intent = new Intent(this, BroadcastReceiverBatteryStatusActivity.class);
         startActivity(intent);
     }
 
