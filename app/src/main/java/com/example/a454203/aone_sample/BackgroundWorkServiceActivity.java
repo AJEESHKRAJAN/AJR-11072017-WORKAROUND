@@ -1,15 +1,21 @@
 package com.example.a454203.aone_sample;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback;
+import android.support.v4.content.ContextCompat;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import java.io.FileOutputStream;
 
-public class BackgroundWorkServiceActivity extends Activity {
+public class BackgroundWorkServiceActivity extends Activity implements OnRequestPermissionsResultCallback {
 
     FileHelper fileHelper = new FileHelper();
     private static final int MAX_WRITES = 5;
@@ -42,10 +48,10 @@ public class BackgroundWorkServiceActivity extends Activity {
         LogHelper.LogThreadId(backgroundWorkLogName, "Logging - Long running method Started");
 
 //        Intent intent =  new Intent(this,BackgroundWorkService.class);
-        Intent intent =  new Intent(this,BackgroundWorkIntentService.class);
-        intent.putExtra("filename",fileName1);
-        intent.putExtra("MAX_WRITES",MAX_WRITES);
-        intent.putExtra("writeText",writeTextA);
+        Intent intent = new Intent(this, BackgroundWorkIntentService.class);
+        intent.putExtra("filename", fileName1);
+        intent.putExtra("MAX_WRITES", MAX_WRITES);
+        intent.putExtra("writeText", writeTextA);
 
         startService(intent);
     }
@@ -53,17 +59,50 @@ public class BackgroundWorkServiceActivity extends Activity {
     private void btnStartMonitoringOnClick(Button button) {
         LogHelper.LogThreadId(backgroundWorkLogName, "Logging - Background Work Monitoring service Initiated - Start");
 
-        Intent intent = new Intent(this,BackgroundWorkMonitoringService.class);
-        intent.setAction(BackgroundWorkMonitoringService.START_ACTION);
-        startService(intent);
+        boolean isHavingPermission = checkLocationPermission();
+        if (!isHavingPermission) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        } else {
+
+            Intent intent = new Intent(this, BackgroundWorkMonitoringService.class);
+            intent.setAction(BackgroundWorkMonitoringService.START_ACTION);
+            startService(intent);
+        }
 
     }
 
     private void btnStopMonitoringOnClick(Button button) {
         LogHelper.LogThreadId(backgroundWorkLogName, "Logging - Background Work Monitoring service Initiated - Stop");
 
-        Intent intent = new Intent(this,BackgroundWorkMonitoringService.class);
+        Intent intent = new Intent(this, BackgroundWorkMonitoringService.class);
         intent.setAction(BackgroundWorkMonitoringService.STOP_ACTION);
         startService(intent);
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(this, "Cannot use Location services. Hence Monitoring doesn't work.", Toast.LENGTH_LONG).show();
+                }
+                return;
+            }
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+    }
+
+    public boolean checkLocationPermission() {
+        String permission = "android.permission.ACCESS_FINE_LOCATION";
+        int res = this.checkCallingOrSelfPermission(permission);
+        return (res == PackageManager.PERMISSION_GRANTED);
     }
 }

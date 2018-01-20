@@ -1,5 +1,6 @@
 package com.example.a454203.aone_sample;
 
+import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationProvider;
@@ -13,11 +14,24 @@ import android.util.Log;
 public class LocationHelper implements LocationListener {
 
     private long threadId = Thread.currentThread().getId();
+    private Context mContext;
+
+    LocationHelper() {
+    }
+
+    LocationHelper(Context context) {
+        mContext = context;
+    }
+
     @Override
     public void onLocationChanged(Location location) {
 
         Log.d("AppThreadingMech-LocHlp", String.format("Provider :%s [running on thread %d] - Location: %.6f/%.6f",
                 location.getProvider(), threadId, location.getLatitude(), location.getLongitude()));
+
+        if (mContext != null) {
+            NotificationHelper.displayNotification(mContext, location);
+        }
     }
 
     @Override
