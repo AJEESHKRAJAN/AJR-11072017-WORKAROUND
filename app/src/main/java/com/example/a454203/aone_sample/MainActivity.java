@@ -1,5 +1,6 @@
 package com.example.a454203.aone_sample;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,7 +12,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    String logName = "MAIN";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
                 onClickActivityBroadcastBatteryStatus(item);
                 handled = true;
                 break;
+            case R.id.actionAnotherAppImplicitIntentService:
+                onTestImplicitIntentServiceAnotherApp(item);
+                handled = true;
+                break;
             default:
                 handled = super.onOptionsItemSelected(item);
         }
@@ -173,6 +178,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BroadcastReceiverBatteryStatusActivity.class);
         startActivity(intent);
     }
+
+    private void onTestImplicitIntentServiceAnotherApp(MenuItem item) {
+        LogHelper.LogThreadId(logName, "Calling from aOneSample");
+        String serviceName = "com.workaround.ajeesh.ajr_22012018_workaround_intents.action.LOG_TIME";
+        Intent implicitIntent_AnotherApp_Testing = new Intent(serviceName);
+        implicitIntent_AnotherApp_Testing.setPackage("com.workaround.ajeesh.ajr_22012018_workaround_intents");
+        startService(implicitIntent_AnotherApp_Testing);
+    }
+
 
     private void onClickMenuExit(MenuItem item) {
         finish();

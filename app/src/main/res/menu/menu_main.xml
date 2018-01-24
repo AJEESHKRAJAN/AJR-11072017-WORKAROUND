@@ -46,6 +46,9 @@
         android:id="@+id/actionBroadcastReceiverBtrySts"
         android:title="@string/broadcast_receiver_battery_status" />
     <item
+        android:id="@+id/actionAnotherAppImplicitIntentService"
+        android:title="@string/test_another_app_intent_service" />
+    <item
         android:id="@+id/actionExit"
         android:title="@string/actionExit" />
 

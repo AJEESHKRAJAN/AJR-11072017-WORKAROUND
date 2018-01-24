@@ -113,4 +113,5 @@
     <string name="start_battery_status_log">Start Battery Status Log</string>
     <string name="stop_battery_status_log">Stop Battery Status Log</string>
     <string name="battery_status_image">Battery Status Image</string>
+    <string name="test_another_app_intent_service">Test - Another App - Intent Service</string>
 </resources>
